@@ -27,6 +27,7 @@ namespace decompile
             var modDef = ModuleDefinition.ReadModule(args[0]);
             foreach (var typeDef in modDef.GetTypes())
             {
+                Console.WriteLine(Environment.NewLine + typeDef.Name + Environment.NewLine);
                 var builder = new AstBuilder(new DecompilerContext(modDef));
                 builder.AddType(typeDef);
                 builder.RunTransformations();
